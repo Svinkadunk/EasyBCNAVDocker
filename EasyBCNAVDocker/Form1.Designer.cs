@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             this.btnCreateContainer = new System.Windows.Forms.Button();
             this.cbImageSelector = new System.Windows.Forms.ComboBox();
             this.cbLocalization = new System.Windows.Forms.ComboBox();
@@ -42,7 +43,10 @@
             this.lblDatabase = new System.Windows.Forms.Label();
             this.fdlgDatabase = new System.Windows.Forms.OpenFileDialog();
             this.txtBoxDatabase = new System.Windows.Forms.TextBox();
+            this.btnAdvanced = new System.Windows.Forms.Button();
+            this.pHackerman = new System.Windows.Forms.PictureBox();
             this.pnlNotification.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pHackerman)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCreateContainer
@@ -50,7 +54,7 @@
             this.btnCreateContainer.BackColor = System.Drawing.Color.Black;
             this.btnCreateContainer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreateContainer.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnCreateContainer.Location = new System.Drawing.Point(227, 329);
+            this.btnCreateContainer.Location = new System.Drawing.Point(253, 329);
             this.btnCreateContainer.Name = "btnCreateContainer";
             this.btnCreateContainer.Size = new System.Drawing.Size(147, 23);
             this.btnCreateContainer.TabIndex = 0;
@@ -176,7 +180,7 @@
             this.lblDatabase.AutoSize = true;
             this.lblDatabase.Font = new System.Drawing.Font("Courier New", 10F);
             this.lblDatabase.ForeColor = System.Drawing.Color.DarkOrange;
-            this.lblDatabase.Location = new System.Drawing.Point(76, 217);
+            this.lblDatabase.Location = new System.Drawing.Point(76, 214);
             this.lblDatabase.Name = "lblDatabase";
             this.lblDatabase.Size = new System.Drawing.Size(72, 17);
             this.lblDatabase.TabIndex = 11;
@@ -191,18 +195,40 @@
             this.txtBoxDatabase.BackColor = System.Drawing.Color.Black;
             this.txtBoxDatabase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBoxDatabase.ForeColor = System.Drawing.Color.DarkOrange;
-            this.txtBoxDatabase.Location = new System.Drawing.Point(157, 216);
+            this.txtBoxDatabase.Location = new System.Drawing.Point(157, 213);
             this.txtBoxDatabase.Name = "txtBoxDatabase";
             this.txtBoxDatabase.Size = new System.Drawing.Size(217, 20);
             this.txtBoxDatabase.TabIndex = 12;
-            this.txtBoxDatabase.TextChanged += new System.EventHandler(this.txtBoxDatabase_TextChanged);
+            this.txtBoxDatabase.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtBoxDatabase_MouseDown);
+            // 
+            // btnAdvanced
+            // 
+            this.btnAdvanced.BackColor = System.Drawing.Color.Black;
+            this.btnAdvanced.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdvanced.ForeColor = System.Drawing.Color.DarkOrange;
+            this.btnAdvanced.Location = new System.Drawing.Point(21, 329);
+            this.btnAdvanced.Name = "btnAdvanced";
+            this.btnAdvanced.Size = new System.Drawing.Size(84, 23);
+            this.btnAdvanced.TabIndex = 13;
+            this.btnAdvanced.Text = "Advanced";
+            this.btnAdvanced.UseVisualStyleBackColor = false;
+            // 
+            // pHackerman
+            // 
+            this.pHackerman.Image = ((System.Drawing.Image)(resources.GetObject("pHackerman.Image")));
+            this.pHackerman.Location = new System.Drawing.Point(0, 226);
+            this.pHackerman.Name = "pHackerman";
+            this.pHackerman.Size = new System.Drawing.Size(428, 157);
+            this.pHackerman.TabIndex = 14;
+            this.pHackerman.TabStop = false;
             // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(15)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(428, 383);
+            this.Controls.Add(this.btnAdvanced);
             this.Controls.Add(this.txtBoxDatabase);
             this.Controls.Add(this.lblDatabase);
             this.Controls.Add(this.txtBoxContainerName);
@@ -215,14 +241,18 @@
             this.Controls.Add(this.cbLocalization);
             this.Controls.Add(this.cbImageSelector);
             this.Controls.Add(this.btnCreateContainer);
+            this.Controls.Add(this.pHackerman);
+            this.Cursor = System.Windows.Forms.Cursors.Cross;
             this.Font = new System.Drawing.Font("Courier New", 8F);
             this.ForeColor = System.Drawing.Color.DarkOrange;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EasyBCNAVDocker";
             this.Load += new System.EventHandler(this.main_Load);
             this.pnlNotification.ResumeLayout(false);
             this.pnlNotification.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pHackerman)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -244,6 +274,8 @@
         private System.Windows.Forms.Label lblDatabase;
         private System.Windows.Forms.OpenFileDialog fdlgDatabase;
         private System.Windows.Forms.TextBox txtBoxDatabase;
+        private System.Windows.Forms.Button btnAdvanced;
+        private System.Windows.Forms.PictureBox pHackerman;
     }
 }
 

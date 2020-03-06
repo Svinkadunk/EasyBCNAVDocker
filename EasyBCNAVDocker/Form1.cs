@@ -17,16 +17,17 @@ namespace EasyBCNAVDocker
         public main()
         {
             InitializeComponent();
-            if (!CheckDocker())
+            lblNotificationTxt.Text = "";
+            if (!CheckNAVContainerHelper())
             {
-                lblNotificationTxt.Text = "Docker is not installed!";
+                lblNotificationTxt.Text += "NavContainerHelper is not installed!    ";
                 pnlNotification.Visible = true;
             }
-        }
-
-        private void cbImageSelector_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            if (!CheckDocker())
+            {
+                lblNotificationTxt.Text += "Docker is not installed!";
+                pnlNotification.Visible = true;
+            }
         }
 
         private void btnCreateContainer_Click(object sender, EventArgs e)
@@ -37,6 +38,17 @@ namespace EasyBCNAVDocker
         private void main_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private Boolean CheckNAVContainerHelper()
+        {
+            Process process = new Process();
+            ProcessStartInfo startinfo = new ProcessStartInfo();
+            startinfo.WindowStyle = ProcessWindowStyle.Hidden;
+            startinfo.FileName = "powershell.exe";
+            startinfo.Arguments = "/C get-installedmodule navcontainerhelper";
+            process.StartInfo = startinfo;
+            return (process.Start());
         }
 
         private Boolean CheckDocker() 
@@ -50,7 +62,7 @@ namespace EasyBCNAVDocker
             return(process.Start());
         }
 
-        private void txtBoxDatabase_TextChanged(object sender, EventArgs e)
+        private void txtBoxDatabase_MouseDown(object sender, MouseEventArgs e)
         {
             DialogResult result = fdlgDatabase.ShowDialog();
             if (result == DialogResult.OK)
