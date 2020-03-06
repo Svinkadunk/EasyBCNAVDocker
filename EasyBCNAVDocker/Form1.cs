@@ -49,5 +49,15 @@ namespace EasyBCNAVDocker
             process.StartInfo = startinfo;
             return(process.Start());
         }
+
+        private void txtBoxDatabase_TextChanged(object sender, EventArgs e)
+        {
+            DialogResult result = fdlgDatabase.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                string file = fdlgDatabase.FileName;
+                txtBoxDatabase.Text = file;
+            }
+        }
     }
 }
