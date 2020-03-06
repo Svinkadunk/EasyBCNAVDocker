@@ -50,11 +50,6 @@ namespace EasyBCNAVDocker
             return(process.Start());
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtBoxDatabase_TextChanged(object sender, EventArgs e)
         {
             DialogResult result = fdlgDatabase.ShowDialog();
