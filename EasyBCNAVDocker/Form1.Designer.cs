@@ -37,6 +37,11 @@
             this.lblVersion = new System.Windows.Forms.Label();
             this.pnlNotification = new System.Windows.Forms.Panel();
             this.lblNotificationTxt = new System.Windows.Forms.Label();
+            this.lblContainerName = new System.Windows.Forms.Label();
+            this.txtBoxContainerName = new System.Windows.Forms.TextBox();
+            this.lblDatabase = new System.Windows.Forms.Label();
+            this.fdlgDatabase = new System.Windows.Forms.OpenFileDialog();
+            this.txtBoxDatabase = new System.Windows.Forms.TextBox();
             this.pnlNotification.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +50,7 @@
             this.btnCreateContainer.BackColor = System.Drawing.Color.Black;
             this.btnCreateContainer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreateContainer.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnCreateContainer.Location = new System.Drawing.Point(227, 197);
+            this.btnCreateContainer.Location = new System.Drawing.Point(227, 329);
             this.btnCreateContainer.Name = "btnCreateContainer";
             this.btnCreateContainer.Size = new System.Drawing.Size(147, 23);
             this.btnCreateContainer.TabIndex = 0;
@@ -62,7 +67,7 @@
             "BC On-premises",
             "BC Sandbox",
             "NAV"});
-            this.cbImageSelector.Location = new System.Drawing.Point(157, 34);
+            this.cbImageSelector.Location = new System.Drawing.Point(157, 73);
             this.cbImageSelector.Name = "cbImageSelector";
             this.cbImageSelector.Size = new System.Drawing.Size(217, 22);
             this.cbImageSelector.TabIndex = 1;
@@ -72,7 +77,12 @@
             this.cbLocalization.BackColor = System.Drawing.Color.Black;
             this.cbLocalization.ForeColor = System.Drawing.Color.DarkOrange;
             this.cbLocalization.FormattingEnabled = true;
-            this.cbLocalization.Location = new System.Drawing.Point(157, 88);
+            this.cbLocalization.Items.AddRange(new object[] {
+            "DK",
+            "NO",
+            "US",
+            "UK"});
+            this.cbLocalization.Location = new System.Drawing.Point(157, 121);
             this.cbLocalization.Name = "cbLocalization";
             this.cbLocalization.Size = new System.Drawing.Size(217, 22);
             this.cbLocalization.TabIndex = 2;
@@ -82,7 +92,7 @@
             this.cbVersion.BackColor = System.Drawing.Color.Black;
             this.cbVersion.ForeColor = System.Drawing.Color.DarkOrange;
             this.cbVersion.FormattingEnabled = true;
-            this.cbVersion.Location = new System.Drawing.Point(157, 136);
+            this.cbVersion.Location = new System.Drawing.Point(157, 169);
             this.cbVersion.Name = "cbVersion";
             this.cbVersion.Size = new System.Drawing.Size(217, 22);
             this.cbVersion.TabIndex = 3;
@@ -92,7 +102,7 @@
             this.lblImageSelector.AutoSize = true;
             this.lblImageSelector.Font = new System.Drawing.Font("Courier New", 10F);
             this.lblImageSelector.ForeColor = System.Drawing.Color.DarkOrange;
-            this.lblImageSelector.Location = new System.Drawing.Point(92, 36);
+            this.lblImageSelector.Location = new System.Drawing.Point(92, 75);
             this.lblImageSelector.Name = "lblImageSelector";
             this.lblImageSelector.Size = new System.Drawing.Size(48, 17);
             this.lblImageSelector.TabIndex = 4;
@@ -103,7 +113,7 @@
             this.lblLocalization.AutoSize = true;
             this.lblLocalization.Font = new System.Drawing.Font("Courier New", 10F);
             this.lblLocalization.ForeColor = System.Drawing.Color.DarkOrange;
-            this.lblLocalization.Location = new System.Drawing.Point(36, 90);
+            this.lblLocalization.Location = new System.Drawing.Point(36, 123);
             this.lblLocalization.Name = "lblLocalization";
             this.lblLocalization.Size = new System.Drawing.Size(104, 17);
             this.lblLocalization.TabIndex = 5;
@@ -114,7 +124,7 @@
             this.lblVersion.AutoSize = true;
             this.lblVersion.Font = new System.Drawing.Font("Courier New", 10F);
             this.lblVersion.ForeColor = System.Drawing.Color.DarkOrange;
-            this.lblVersion.Location = new System.Drawing.Point(76, 138);
+            this.lblVersion.Location = new System.Drawing.Point(76, 171);
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Size = new System.Drawing.Size(64, 17);
             this.lblVersion.TabIndex = 6;
@@ -125,7 +135,7 @@
             this.pnlNotification.BackColor = System.Drawing.Color.Red;
             this.pnlNotification.Controls.Add(this.lblNotificationTxt);
             this.pnlNotification.ForeColor = System.Drawing.Color.White;
-            this.pnlNotification.Location = new System.Drawing.Point(0, 225);
+            this.pnlNotification.Location = new System.Drawing.Point(0, 358);
             this.pnlNotification.Name = "pnlNotification";
             this.pnlNotification.Size = new System.Drawing.Size(428, 25);
             this.pnlNotification.TabIndex = 7;
@@ -140,12 +150,63 @@
             this.lblNotificationTxt.TabIndex = 0;
             this.lblNotificationTxt.Text = "dummytxt";
             // 
+            // lblContainerName
+            // 
+            this.lblContainerName.AutoSize = true;
+            this.lblContainerName.Font = new System.Drawing.Font("Courier New", 10F);
+            this.lblContainerName.ForeColor = System.Drawing.Color.DarkOrange;
+            this.lblContainerName.Location = new System.Drawing.Point(100, 31);
+            this.lblContainerName.Name = "lblContainerName";
+            this.lblContainerName.Size = new System.Drawing.Size(40, 17);
+            this.lblContainerName.TabIndex = 9;
+            this.lblContainerName.Text = "Name";
+            // 
+            // txtBoxContainerName
+            // 
+            this.txtBoxContainerName.BackColor = System.Drawing.Color.Black;
+            this.txtBoxContainerName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBoxContainerName.ForeColor = System.Drawing.Color.DarkOrange;
+            this.txtBoxContainerName.Location = new System.Drawing.Point(157, 29);
+            this.txtBoxContainerName.Name = "txtBoxContainerName";
+            this.txtBoxContainerName.Size = new System.Drawing.Size(217, 20);
+            this.txtBoxContainerName.TabIndex = 2;
+            // 
+            // lblDatabase
+            // 
+            this.lblDatabase.AutoSize = true;
+            this.lblDatabase.Font = new System.Drawing.Font("Courier New", 10F);
+            this.lblDatabase.ForeColor = System.Drawing.Color.DarkOrange;
+            this.lblDatabase.Location = new System.Drawing.Point(76, 217);
+            this.lblDatabase.Name = "lblDatabase";
+            this.lblDatabase.Size = new System.Drawing.Size(72, 17);
+            this.lblDatabase.TabIndex = 11;
+            this.lblDatabase.Text = "Database";
+            // 
+            // fdlgDatabase
+            // 
+            this.fdlgDatabase.FileName = "bakDatabase";
+            // 
+            // txtBoxDatabase
+            // 
+            this.txtBoxDatabase.BackColor = System.Drawing.Color.Black;
+            this.txtBoxDatabase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBoxDatabase.ForeColor = System.Drawing.Color.DarkOrange;
+            this.txtBoxDatabase.Location = new System.Drawing.Point(157, 216);
+            this.txtBoxDatabase.Name = "txtBoxDatabase";
+            this.txtBoxDatabase.Size = new System.Drawing.Size(217, 20);
+            this.txtBoxDatabase.TabIndex = 12;
+            this.txtBoxDatabase.TextChanged += new System.EventHandler(this.txtBoxDatabase_TextChanged);
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(428, 250);
+            this.ClientSize = new System.Drawing.Size(428, 383);
+            this.Controls.Add(this.txtBoxDatabase);
+            this.Controls.Add(this.lblDatabase);
+            this.Controls.Add(this.txtBoxContainerName);
+            this.Controls.Add(this.lblContainerName);
             this.Controls.Add(this.pnlNotification);
             this.Controls.Add(this.lblVersion);
             this.Controls.Add(this.lblLocalization);
@@ -155,7 +216,7 @@
             this.Controls.Add(this.cbImageSelector);
             this.Controls.Add(this.btnCreateContainer);
             this.Font = new System.Drawing.Font("Courier New", 8F);
-            this.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.ForeColor = System.Drawing.Color.DarkOrange;
             this.Name = "main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EasyBCNAVDocker";
@@ -178,6 +239,11 @@
         private System.Windows.Forms.Label lblVersion;
         private System.Windows.Forms.Panel pnlNotification;
         private System.Windows.Forms.Label lblNotificationTxt;
+        private System.Windows.Forms.Label lblContainerName;
+        private System.Windows.Forms.TextBox txtBoxContainerName;
+        private System.Windows.Forms.Label lblDatabase;
+        private System.Windows.Forms.OpenFileDialog fdlgDatabase;
+        private System.Windows.Forms.TextBox txtBoxDatabase;
     }
 }
 
