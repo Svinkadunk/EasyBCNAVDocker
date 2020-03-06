@@ -44,6 +44,7 @@
             // 
             this.btnCreateContainer.BackColor = System.Drawing.Color.Black;
             this.btnCreateContainer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateContainer.ForeColor = System.Drawing.Color.DarkOrange;
             this.btnCreateContainer.Location = new System.Drawing.Point(227, 197);
             this.btnCreateContainer.Name = "btnCreateContainer";
             this.btnCreateContainer.Size = new System.Drawing.Size(147, 23);
@@ -55,7 +56,7 @@
             // cbImageSelector
             // 
             this.cbImageSelector.BackColor = System.Drawing.Color.Black;
-            this.cbImageSelector.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.cbImageSelector.ForeColor = System.Drawing.Color.DarkOrange;
             this.cbImageSelector.FormattingEnabled = true;
             this.cbImageSelector.Items.AddRange(new object[] {
             "BC On-premises",
@@ -69,7 +70,7 @@
             // cbLocalization
             // 
             this.cbLocalization.BackColor = System.Drawing.Color.Black;
-            this.cbLocalization.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.cbLocalization.ForeColor = System.Drawing.Color.DarkOrange;
             this.cbLocalization.FormattingEnabled = true;
             this.cbLocalization.Location = new System.Drawing.Point(157, 88);
             this.cbLocalization.Name = "cbLocalization";
@@ -79,7 +80,7 @@
             // cbVersion
             // 
             this.cbVersion.BackColor = System.Drawing.Color.Black;
-            this.cbVersion.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.cbVersion.ForeColor = System.Drawing.Color.DarkOrange;
             this.cbVersion.FormattingEnabled = true;
             this.cbVersion.Location = new System.Drawing.Point(157, 136);
             this.cbVersion.Name = "cbVersion";
@@ -90,6 +91,7 @@
             // 
             this.lblImageSelector.AutoSize = true;
             this.lblImageSelector.Font = new System.Drawing.Font("Courier New", 10F);
+            this.lblImageSelector.ForeColor = System.Drawing.Color.DarkOrange;
             this.lblImageSelector.Location = new System.Drawing.Point(92, 36);
             this.lblImageSelector.Name = "lblImageSelector";
             this.lblImageSelector.Size = new System.Drawing.Size(48, 17);
@@ -100,6 +102,7 @@
             // 
             this.lblLocalization.AutoSize = true;
             this.lblLocalization.Font = new System.Drawing.Font("Courier New", 10F);
+            this.lblLocalization.ForeColor = System.Drawing.Color.DarkOrange;
             this.lblLocalization.Location = new System.Drawing.Point(36, 90);
             this.lblLocalization.Name = "lblLocalization";
             this.lblLocalization.Size = new System.Drawing.Size(104, 17);
@@ -110,6 +113,7 @@
             // 
             this.lblVersion.AutoSize = true;
             this.lblVersion.Font = new System.Drawing.Font("Courier New", 10F);
+            this.lblVersion.ForeColor = System.Drawing.Color.DarkOrange;
             this.lblVersion.Location = new System.Drawing.Point(76, 138);
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Size = new System.Drawing.Size(64, 17);
