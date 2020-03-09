@@ -68,8 +68,8 @@
             this.cbImageSelector.ForeColor = System.Drawing.Color.DarkOrange;
             this.cbImageSelector.FormattingEnabled = true;
             this.cbImageSelector.Items.AddRange(new object[] {
-            "BC On-premises",
-            "BC Sandbox",
+            "Business Central On-premises",
+            "Business Central Cloud",
             "NAV"});
             this.cbImageSelector.Location = new System.Drawing.Point(157, 73);
             this.cbImageSelector.Name = "cbImageSelector";
@@ -106,11 +106,11 @@
             this.lblImageSelector.AutoSize = true;
             this.lblImageSelector.Font = new System.Drawing.Font("Courier New", 10F);
             this.lblImageSelector.ForeColor = System.Drawing.Color.DarkOrange;
-            this.lblImageSelector.Location = new System.Drawing.Point(92, 75);
+            this.lblImageSelector.Location = new System.Drawing.Point(68, 75);
             this.lblImageSelector.Name = "lblImageSelector";
-            this.lblImageSelector.Size = new System.Drawing.Size(48, 17);
+            this.lblImageSelector.Size = new System.Drawing.Size(72, 17);
             this.lblImageSelector.TabIndex = 4;
-            this.lblImageSelector.Text = "Image";
+            this.lblImageSelector.Text = "Base app";
             // 
             // lblLocalization
             // 
