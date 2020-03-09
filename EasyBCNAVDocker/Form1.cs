@@ -92,7 +92,14 @@ namespace EasyBCNAVDocker
             ps.AddParameter("-imageName", dockerImage());
             ps.AddParameter("-auth", "NavUserPassword");
             ps.AddParameter("-Credential", credential);
-            ps.Invoke();
+            try
+            {
+                ps.Invoke();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
 
             string containerName()
             {
@@ -104,11 +111,13 @@ namespace EasyBCNAVDocker
             string dockerImage()
             {
                 string dockerImageString = "No image chosen";
+                Boolean chooseApp = false;
                 switch (cbImageSelector.Text)
                 {
                     case "":
                         lblNotificationTxt.Text = "You must choose a base app.";
                         pnlNotification.Visible = true;
+                        chooseApp = true;
                         break;
                     case "Business Central On-premises":
                         dockerImageString = "\"mcr.microsoft.com/businesscentral/onprem\"";
@@ -124,8 +133,13 @@ namespace EasyBCNAVDocker
                         break;
                 }
                 //create version tag (combination of localization and version)
-                pullImage(dockerImageString);
-                return dockerImageString;
+                if (!chooseApp)
+                {
+                    pnlNotification.Visible = false;
+                    pullImage(dockerImageString);
+                    return dockerImageString;
+                }
+                return "";
 
                 void pullImage(string imageString)
                 {
