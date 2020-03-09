@@ -127,9 +127,8 @@ namespace EasyBCNAVDocker
                 {
                     pnlNotification.Visible = false;
                     pullImage(dockerImageString);
-                    return dockerImageString;
                 }
-                return "";
+                return dockerImageString;
 
                 void pullImage(string imageString)
                 {
