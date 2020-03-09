@@ -43,28 +43,12 @@ namespace EasyBCNAVDocker
 
         private Boolean CheckNAVContainerHelper()
         {
-            Process process = new Process();
-            ProcessStartInfo startinfo = new ProcessStartInfo
-            {
-                WindowStyle = ProcessWindowStyle.Hidden,
-                FileName = "powershell.exe",
-                Arguments = "/C get-installedmodule navcontainerhelper"
-            };
-            process.StartInfo = startinfo;
-            return (process.Start());
+            return RunProcess("powershell.exe", "/C get-installedmodule navcontainerhelper", true);
         }
 
         private Boolean CheckDocker() 
         {
-            Process process = new Process();
-            ProcessStartInfo startinfo = new ProcessStartInfo
-            {
-                WindowStyle = ProcessWindowStyle.Hidden,
-                FileName = "CMD.exe",
-                Arguments = "/C docker -v"
-            };
-            process.StartInfo = startinfo;
-            return(process.Start());
+            return RunProcess("CMD.exe", "/C docker -v", true);
         }
 
         private void txtBoxDatabase_MouseDown(object sender, MouseEventArgs e)
@@ -143,24 +127,34 @@ namespace EasyBCNAVDocker
 
                 void pullImage(string imageString)
                 {
-                    Process process = new Process();
-                    ProcessStartInfo startinfo = new ProcessStartInfo
-                    {
-                        FileName = "CMD.exe",
-                        Arguments = "/C docker pull " + imageString
-                    };
-                    process.StartInfo = startinfo;
-                    process.Start();
+                    RunProcess("CMD.exe", "/C docker pull " + imageString, false);
                 }
             }
+        }
+
+        private Boolean RunProcess(string FileNameParam, string ArgumentsParam, bool Hidden)
+        {
+            Process process = new Process();
+            ProcessStartInfo startinfo = new ProcessStartInfo
+            {
+                FileName = FileNameParam,
+                Arguments = ArgumentsParam
+            };
+            if (Hidden)
+            {
+                startinfo.WindowStyle = ProcessWindowStyle.Hidden;
+            }
+            process.StartInfo = startinfo;
+            return (process.Start());
         }
     }
 }
 
 //Functionality to build:
-//Remove containers
+//Remove containers (pop-up where you can choose which container to remove)
 //Advanced setup (container parameters)
 //Import extensions to container
 //Backup database from container
 //Add test toolkit
 //Clean up unused images
+//Overview of containers
