@@ -45,6 +45,7 @@
             this.txtBoxDatabase = new System.Windows.Forms.TextBox();
             this.btnAdvanced = new System.Windows.Forms.Button();
             this.pHackerman = new System.Windows.Forms.PictureBox();
+            this.btnExit = new System.Windows.Forms.Button();
             this.pnlNotification.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pHackerman)).BeginInit();
             this.SuspendLayout();
@@ -57,7 +58,7 @@
             this.btnCreateContainer.Location = new System.Drawing.Point(253, 329);
             this.btnCreateContainer.Name = "btnCreateContainer";
             this.btnCreateContainer.Size = new System.Drawing.Size(147, 23);
-            this.btnCreateContainer.TabIndex = 0;
+            this.btnCreateContainer.TabIndex = 6;
             this.btnCreateContainer.Text = "Create Container!";
             this.btnCreateContainer.UseVisualStyleBackColor = false;
             this.btnCreateContainer.Click += new System.EventHandler(this.btnCreateContainer_Click);
@@ -74,7 +75,7 @@
             this.cbImageSelector.Location = new System.Drawing.Point(157, 73);
             this.cbImageSelector.Name = "cbImageSelector";
             this.cbImageSelector.Size = new System.Drawing.Size(217, 22);
-            this.cbImageSelector.TabIndex = 1;
+            this.cbImageSelector.TabIndex = 2;
             // 
             // cbLocalization
             // 
@@ -89,7 +90,7 @@
             this.cbLocalization.Location = new System.Drawing.Point(157, 121);
             this.cbLocalization.Name = "cbLocalization";
             this.cbLocalization.Size = new System.Drawing.Size(217, 22);
-            this.cbLocalization.TabIndex = 2;
+            this.cbLocalization.TabIndex = 3;
             // 
             // cbVersion
             // 
@@ -99,7 +100,7 @@
             this.cbVersion.Location = new System.Drawing.Point(157, 169);
             this.cbVersion.Name = "cbVersion";
             this.cbVersion.Size = new System.Drawing.Size(217, 22);
-            this.cbVersion.TabIndex = 3;
+            this.cbVersion.TabIndex = 4;
             // 
             // lblImageSelector
             // 
@@ -138,6 +139,7 @@
             // 
             this.pnlNotification.BackColor = System.Drawing.Color.Red;
             this.pnlNotification.Controls.Add(this.lblNotificationTxt);
+            this.pnlNotification.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlNotification.ForeColor = System.Drawing.Color.White;
             this.pnlNotification.Location = new System.Drawing.Point(0, 358);
             this.pnlNotification.Name = "pnlNotification";
@@ -173,7 +175,7 @@
             this.txtBoxContainerName.Location = new System.Drawing.Point(157, 29);
             this.txtBoxContainerName.Name = "txtBoxContainerName";
             this.txtBoxContainerName.Size = new System.Drawing.Size(217, 20);
-            this.txtBoxContainerName.TabIndex = 2;
+            this.txtBoxContainerName.TabIndex = 1;
             // 
             // lblDatabase
             // 
@@ -198,7 +200,7 @@
             this.txtBoxDatabase.Location = new System.Drawing.Point(157, 213);
             this.txtBoxDatabase.Name = "txtBoxDatabase";
             this.txtBoxDatabase.Size = new System.Drawing.Size(217, 20);
-            this.txtBoxDatabase.TabIndex = 12;
+            this.txtBoxDatabase.TabIndex = 5;
             this.txtBoxDatabase.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtBoxDatabase_MouseDown);
             // 
             // btnAdvanced
@@ -209,7 +211,7 @@
             this.btnAdvanced.Location = new System.Drawing.Point(21, 329);
             this.btnAdvanced.Name = "btnAdvanced";
             this.btnAdvanced.Size = new System.Drawing.Size(84, 23);
-            this.btnAdvanced.TabIndex = 13;
+            this.btnAdvanced.TabIndex = 7;
             this.btnAdvanced.Text = "Advanced";
             this.btnAdvanced.UseVisualStyleBackColor = false;
             // 
@@ -222,12 +224,31 @@
             this.pHackerman.TabIndex = 14;
             this.pHackerman.TabStop = false;
             // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExit.BackgroundImage")));
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(15)))), ((int)(((byte)(0)))));
+            this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(15)))), ((int)(((byte)(0)))));
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.ForeColor = System.Drawing.Color.Transparent;
+            this.btnExit.Location = new System.Drawing.Point(403, 0);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(25, 25);
+            this.btnExit.TabIndex = 8;
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(15)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(428, 383);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnAdvanced);
             this.Controls.Add(this.txtBoxDatabase);
             this.Controls.Add(this.lblDatabase);
@@ -245,6 +266,7 @@
             this.Cursor = System.Windows.Forms.Cursors.Cross;
             this.Font = new System.Drawing.Font("Courier New", 8F);
             this.ForeColor = System.Drawing.Color.DarkOrange;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -276,6 +298,7 @@
         private System.Windows.Forms.TextBox txtBoxDatabase;
         private System.Windows.Forms.Button btnAdvanced;
         private System.Windows.Forms.PictureBox pHackerman;
+        private System.Windows.Forms.Button btnExit;
     }
 }
 

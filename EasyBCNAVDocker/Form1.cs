@@ -10,6 +10,7 @@ using System.Windows.Forms;
 //BCNAV
 using System.Diagnostics;
 using System.Management.Automation;
+using System.Text.RegularExpressions;
 
 namespace EasyBCNAVDocker
 {
@@ -76,6 +77,11 @@ namespace EasyBCNAVDocker
             ps.AddParameter("-imageName", dockerImage());
             ps.AddParameter("-auth", "NavUserPassword");
             ps.AddParameter("-Credential", credential);
+            Regex rx = new Regex("^.*(.bak)$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+            if (rx.IsMatch(txtBoxDatabase.Text))
+            {
+                ps.AddParameter("-bakFile", txtBoxDatabase.Text);
+            }
             try
             {
                 ps.Invoke();
@@ -146,6 +152,11 @@ namespace EasyBCNAVDocker
             }
             process.StartInfo = startinfo;
             return (process.Start());
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
