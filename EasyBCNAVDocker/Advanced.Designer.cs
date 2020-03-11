@@ -44,6 +44,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Advanced";
             this.Text = "Advanced";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Advanced_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Advanced_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Advanced_MouseUp);
             this.ResumeLayout(false);
 
         }
