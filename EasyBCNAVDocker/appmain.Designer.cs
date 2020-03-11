@@ -273,6 +273,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EasyBCNAVDocker";
             this.Load += new System.EventHandler(this.main_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.main_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.main_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.main_MouseUp);
             this.pnlNotification.ResumeLayout(false);
             this.pnlNotification.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pHackerman)).EndInit();
