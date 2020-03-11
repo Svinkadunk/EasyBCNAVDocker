@@ -141,9 +141,9 @@
             this.pnlNotification.Controls.Add(this.lblNotificationTxt);
             this.pnlNotification.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlNotification.ForeColor = System.Drawing.Color.White;
-            this.pnlNotification.Location = new System.Drawing.Point(0, 358);
+            this.pnlNotification.Location = new System.Drawing.Point(0, 360);
             this.pnlNotification.Name = "pnlNotification";
-            this.pnlNotification.Size = new System.Drawing.Size(428, 25);
+            this.pnlNotification.Size = new System.Drawing.Size(430, 25);
             this.pnlNotification.TabIndex = 7;
             this.pnlNotification.Visible = false;
             // 
@@ -214,6 +214,7 @@
             this.btnAdvanced.TabIndex = 7;
             this.btnAdvanced.Text = "Advanced";
             this.btnAdvanced.UseVisualStyleBackColor = false;
+            this.btnAdvanced.Click += new System.EventHandler(this.btnAdvanced_Click);
             // 
             // pHackerman
             // 
@@ -247,7 +248,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(15)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(428, 383);
+            this.ClientSize = new System.Drawing.Size(430, 385);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnAdvanced);
             this.Controls.Add(this.txtBoxDatabase);

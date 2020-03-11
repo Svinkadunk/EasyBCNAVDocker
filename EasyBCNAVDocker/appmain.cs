@@ -16,6 +16,8 @@ namespace EasyBCNAVDocker
 {
     public partial class main : Form
     {
+        Point advancedConst = new Point(50, 0);
+
         public main()
         {
             InitializeComponent();
@@ -156,6 +158,14 @@ namespace EasyBCNAVDocker
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnAdvanced_Click(object sender, EventArgs e)
+        {
+            var advancedForm = new Advanced();
+            advancedForm.StartPosition = FormStartPosition.Manual;
+            advancedForm.Location = new Point(this.Location.X + this.Size.Width + advancedConst.X, this.Location.Y + advancedConst.Y);
+            advancedForm.Show();
         }
     }
 }
