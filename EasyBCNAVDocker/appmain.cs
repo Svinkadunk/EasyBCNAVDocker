@@ -83,8 +83,8 @@ namespace EasyBCNAVDocker
             ps.AddParameter("-imageName", dockerImage());
             ps.AddParameter("-auth", "NavUserPassword");
             ps.AddParameter("-Credential", credential);
-            Regex rx = new Regex("^.*(.bak)$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
-            if (rx.IsMatch(txtBoxDatabase.Text))
+            Regex rxBak = new Regex("^.*(.bak)$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+            if (rxBak.IsMatch(txtBoxDatabase.Text))
             {
                 ps.AddParameter("-bakFile", txtBoxDatabase.Text);
             }
@@ -99,9 +99,14 @@ namespace EasyBCNAVDocker
 
             string containerName()
             {
-                //regex på containername
-                //if regex check = valid then
-                return txtBoxContainerName.Text;
+                Regex rxCtnr = new Regex("[a-zA-Z0-9][a-zA-Z0-9_.-]", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+                if (rxCtnr.IsMatch(txtBoxContainerName.Text) && (txtBoxContainerName.Text.Length <= 30))
+                {
+                    return txtBoxContainerName.Text;
+                } else
+                {
+                    return "default";
+                }
             }
 
             string dockerImage()
